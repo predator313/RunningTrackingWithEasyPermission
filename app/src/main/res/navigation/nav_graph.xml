@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/setUpFragment">
+    <action
+        android:id="@+id/action_global_tracking_fragment"
+        app:destination="@+id/trackingFragment"
+        app:launchSingleTop="true"/>
+<!--    launch single top is very important here it will not create the new instance hence data will preserved-->
+
+    <fragment
+        android:id="@+id/runFragment2"
+        android:name="com.example.runningtrackingapp.ui.fragment.RunFragment"
+        android:label="RunFragment" >
+        <action
+            android:id="@+id/action_runFragment2_to_trackingFragment"
+            app:destination="@id/trackingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setUpFragment"
+        android:name="com.example.runningtrackingapp.ui.fragment.SetUpFragment"
+        android:label="SetUpFragment" >
+        <action
+            android:id="@+id/action_setUpFragment_to_runFragment2"
+            app:destination="@id/runFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.runningtrackingapp.ui.fragment.SettingFragment"
+        android:label="SettingFragment" />
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.example.runningtrackingapp.ui.fragment.StatisticsFragment"
+        android:label="StatisticsFragment" />
+    <fragment
+        android:id="@+id/trackingFragment"
+        android:name="com.example.runningtrackingapp.ui.fragment.TrackingFragment"
+        android:label="TrackingFragment" >
+        <action
+            android:id="@+id/action_trackingFragment_to_runFragment2"
+            app:destination="@id/runFragment2" />
+    </fragment>
+</navigation>
